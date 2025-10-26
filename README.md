@@ -1,65 +1,87 @@
-# DJS01: Vanilla JS Podcast App
+🎙️ DJS01: Vanilla JS Podcast App
 
-## Overview
+A clean, responsive web application built with HTML, Tailwind CSS, and Vanilla JavaScript, allowing users to browse podcast shows and view detailed information through a dynamic modal — all without leaving the page.
 
-You will design and build a responsive web application that allows users to **browse podcast shows** on a landing page and **view detailed information** in a modal. The application should display clear, concise previews of podcast shows and offer additional information through a modal pop-up, **all without navigating away from the page**. Your app should showcase clean code architecture and strong UI/UX design while following JavaScript best practices.
+🌟 Overview
 
----
+The Podcast App displays a curated selection of podcast shows with their cover images, genres, number of seasons, and last updated dates. When a user clicks on a podcast card, a detailed modal pops up with expanded information, including a larger image, description, genre tags, and a full list of seasons.
 
-## Core Objectives
+This project was created as part of the DJS01: JavaScript Fundamentals Module — focusing on modular, interactive UI components and JavaScript best practices.
 
-### 1. Landing Page – Podcast Previews
+🧭 Features
+🎧 Landing Page – Podcast Previews
 
-- Display a list of podcast shows on the landing page.
-- Each podcast preview must include:
-  - Cover image
-  - Show title
-  - Number of seasons
-  - Genre names
-  - Last updated date (in a human-readable format)
+Displays a grid of podcast cards.
 
-### 2. Modal View – Show Details
+Each card includes:
 
-- When a user clicks on a podcast preview, open a modal.
-- The modal should include:
-  - Larger cover image
-  - Podcast title
-  - Description of the show
-  - Genre tags
-  - Last updated date (readable format)
-  - List of season titles
-  - Number of episodes in each season
-- Include a clear and accessible way to **close the modal**.
+Cover image
 
-### 3. Code Architecture & Best Practices
+Podcast title
 
-- Use **object-oriented programming (OOP)** where appropriate.
-- Apply **functional programming principles** to ensure modularity and predictability.
-- Follow **SOLID design principles** for clean, maintainable code.
-- Abstract repeated logic into **reusable functions or classes**.
-- Add **JSDoc comments** for major functions and modules.
+Number of seasons
 
----
+Genre tags
 
-## Technical Requirements
+“Last updated” time.
 
-- Use **HTML, CSS (or Tailwind), and JavaScript**.
-- No page reloads: Use JavaScript to handle modal behaviour and data rendering.
-- Ensure all UI states (modal open/close, hover effects, etc.) work smoothly.
-- Ensure all data is displayed in a **readable and accessible format**.
+💬 Modal View – Show Details
 
----
+Opens when a user clicks a podcast card.
 
-## Design & UX Goals
+Contains:
 
-- Visually appealing UI with clear layout and hierarchy.
-- Use a consistent **colour scheme, typography, spacing, and sizing**.
-- Accessibility considerations (contrast, font readability, responsive buttons).
-- App should be fully **responsive** on desktop, tablet, and mobile.
+Larger cover image
 
-Make sure to dive into the wireframe reference images folder for guidance on how to build the UI structure. Note that the UI wireframes for both Desktop and Mobile are included.  
+Podcast title & full description
 
-![alt text](<wireframe reference images/desktop view/desktop_modal_view.png>)
+Genre badges
+
+Last updated date
+
+List of seasons with episode counts.
+
+Includes a close button and backdrop click support for accessibility.
+
+🧱 Code Structure & Best Practices
+
+Organized into separate files:
+
+index.html → structure
+
+main.js → rendering and event handling
+
+modal.js → modal logic
+
+data.js → podcast and genre data
+
+utils.js → reusable helper functions
+
+Follows modular, functional JS principles.
+
+Uses DOM manipulation without page reloads.
+
+Fully responsive using Tailwind CSS utility classes.
+
+🧩 Tech Stack
+
+HTML5 for structure
+
+Tailwind CSS for styling and responsiveness
+
+Vanilla JavaScript (ES Modules) for interactivity
+
+🖥️ Design & UX Goals
+
+Clean, minimal layout inspired by modern podcast platforms.
+
+Clear visual hierarchy and consistent spacing.
+
+Smooth transitions between card and modal views.
+
+Fully responsive (desktop, tablet, mobile).
+
+Accessibility-first approach (readable text, keyboard-accessible modal).
 
 ---
 
