@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PodcastApp Vanilla Javascript</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-dvh bg-neutral-50 text-neutral-900">
+    <!-- Top Bar -->
+    <header class="sticky top-0 z-20 border-b border-neutral-200 bg-white/80 backdrop-blur">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+        <div class="flex items-center gap-2">
+          <!-- Radio Icon -->
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><rect x="2" y="8" width="20" height="12" rx="2"/><path d="M6 8V6a2 2 0 0 1 2-2h.5l7.5 2"/><circle cx="8" cy="14" r="2"/></svg>
+          <span class="text-xl font-semibold">PodcastApp</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <button aria-label="Search" class="rounded-full p-2 hover:bg-neutral-100">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+          <div class="h-8 w-8 overflow-hidden rounded-full bg-neutral-200 ring-1 ring-neutral-300 flex items-center justify-center">
+            <!-- Avatar placeholder -->
+            <svg class="h-5 w-5 text-neutral-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 1 0-16 0"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+        </div>
+      </div>
+    </header>
+
+        <main class="mx-auto max-w-6xl px-4 py-6">
+        <!-- Filter Bar -->
+        <div class="flex items-center gap-3">
+            <label for="genre-filter" class="text-sm font-medium text-neutral-700">Filter by:</label>
+             <select
+                id="genre-filter"
+                class="rounded-lg border border-neutral-300 bg-white px-4 py-2 pr-9 text-sm shadow-sm outline-none transition hover:border-neutral-400 focus:border-neutral-900"
+                >
+                <option>All Genres</option>
+                <option>Technology</option>
+                <option>Business</option>
+                <option>True Crime</option>
+                <option>Mystery</option>
+                <option>Comedy</option>
+                <option>Entertainment</option>
+                <option>Health</option>
+                <option>Lifestyle</option>
+                <option>History</option>
+                <option>Education</option>
+                <option>Sports</option>
+                <option>News</option>
+                <option>Science</option>
+                <option>Nature</option>
+            </select>
+            <select
+                id="sort-filter"
+                class="rounded-lg border border-neutral-300 bg-white px-4 py-2 pr-9 text-sm shadow-sm outline-none transition hover:border-neutral-400 focus:border-neutral-900"
+            >
+                <option value="recent">Recently Updated</option>
+                <option value="popular">Most Popular</option>
+                <option value="newest">Newest</option>
+            </select>
+        </div>
+       
+        <!-- Grid (Desktop) & Stacked (Mobile) -->
+        <section 
+            id="podcast-list"
+            class="grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" 
+            aria-label="Podcast list">
+            <!-- Card Template (repeat) -->
+            
+            <!-- 1 -->
+            <article class="rounded-xl border border-neutral-200 bg-white shadow-sm transition hover:shadow-md">
+            <div class="aspect-[16/12] w-full overflow-hidden rounded-t-xl bg-neutral-200 flex items-center justify-center text-neutral-600 font-semibold">Podcast Cover</div>
+            <div class="space-y-3 p-4">
+                <h3 class="text-base font-semibold tracking-tight sm:text-lg">Podcast Title</h3>
+                <div class="flex items-center gap-2 text-sm text-neutral-600">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/></svg>
+                <span>3 seasons</span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                <span class="rounded-md border border-neutral-200 bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-700">Technology</span>
+                <span class="rounded-md border border-neutral-200 bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-700">Business</span>
+                </div>
+                <p class="pt-1 text-xs text-neutral-500">Updated 2 days ago</p>
+            </div>
+            </article>
+
+            <!-- 2 -->
+            <article class="rounded-xl border border-neutral-200 bg-white shadow-sm transition hover:shadow-md">
+            <div class="aspect-[16/12] w-full overflow-hidden rounded-t-xl bg-neutral-200 flex items-center justify-center text-neutral-600 font-semibold">Podcast Cover</div>
+            <div class="space-y-3 p-4">
+                <h3 class="text-base font-semibold tracking-tight sm:text-lg">Podcast Title</h3>
+                <div class="flex items-center gap-2 text-sm text-neutral-600">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/></svg>
+                <span>5 seasons</span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                <span class="rounded-md border border-neutral-200 bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-700">True Crime</span>
+                <span class="rounded-md border border-neutral-200 bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-700">Mystery</span>
+                </div>
+                <p class="pt-1 text-xs text-neutral-500">Updated 1 week ago</p>
+            </div>
+            </article>
+
+            <!-- 3 -->
+            <article class="rounded-xl border border-neutral-200 bg-white shadow-sm transition hover:shadow-md">
+            <div class="aspect-[16/12] w-full overflow-hidden rounded-t-xl bg-neutral-200 flex items-center justify-center text-neutral-600 font-semibold">Podcast Cover</div>
+            <div class="space-y-3 p-4">
+                <h3 class="text-base font-semibold tracking-tight sm:text-lg">Podcast Title</h3>
+                <div class="flex items-center gap-2 text-sm text-neutral-600">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/></svg>
+                <span>2 seasons</span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                <span class="rounded-md border border-neutral-200 bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-700">Comedy</span>
+                <span class="rounded-md border border-neutral-200 bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-700">Entertainment</span>
+                </div>
+                <p class="pt-1 text-xs text-neutral-500">Updated 3 days ago</p>
+            </div>
+            </article>
+
+            <!-- 4 -->
+            <article class="rounded-xl border border-neutral-200 bg-white shadow-sm transition hover:shadow-md">
+            <div class="aspect-[16/12] w-full overflow-hidden rounded-t-xl bg-neutral-200 flex items-center justify-center text-neutral-600 font-semibold">Podcast Cover</div>
+            <div class="space-y-3 p-4">
+                <h3 class="text-base font-semibold tracking-tight sm:text-lg">Podcast Title</h3>
+                <div class="flex items-center gap-2 text-sm text-neutral-600">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/></svg>
+                <span>4 seasons</span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                <span class="rounded-md border border-neutral-200 bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-700">Business</span>
+                <span class="rounded-md border border-neutral-200 bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-700">Entrepreneurship</span>
+                </div>
+                <p class="pt-1 text-xs text-neutral-500">Updated 5 days ago</p>
+            </div>
+            </article>
+
+            <!-- 5 -->
+            <article class="rounded-xl border border-neutral-200 bg-white shadow-sm transition hover:shadow-md">
+            <div class="aspect-[16/12] w-full overflow-hidden rounded-t-xl bg-neutral-200 flex items-center justify-center text-neutral-600 font-semibold">Podcast Cover</div>
+            <div class="space-y-3 p-4">
+                <h3 class="text-base font-semibold tracking-tight sm:text-lg">Podcast Title</h3>
+                <div class="flex items-center gap-2 text-sm text-neutral-600">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/></svg>
+                <span>6 seasons</span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                <span class="rounded-md border border-neutral-200 bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-700">Health</span>
+                <span class="rounded-md border border-neutral-200 bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-700">Lifestyle</span>
+                </div>
+                <p class="pt-1 text-xs text-neutral-500">Updated 1 day ago</p>
+            </div>
+            </article>
+
+            <!-- 6 -->
+            <article class="rounded-xl border border-neutral-200 bg-white shadow-sm transition hover:shadow-md">
+            <div class="aspect-[16/12] w-full overflow-hidden rounded-t-xl bg-neutral-200 flex items-center justify-center text-neutral-600 font-semibold">Podcast Cover</div>
+            <div class="space-y-3 p-4">
+                <h3 class="text-base font-semibold tracking-tight sm:text-lg">Podcast Title</h3>
+                <div class="flex items-center gap-2 text-sm text-neutral-600">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/></svg>
+                <span>7 seasons</span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                <span class="rounded-md border border-neutral-200 bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-700">History</span>
+                <span class="rounded-md border border-neutral-200 bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-700">Education</span>
+                </div>
+                <p class="pt-1 text-xs text-neutral-500">Updated 4 days ago</p>
+            </div>
+            </article>
+
+            <!-- 7 -->
+            <article class="rounded-xl border border-neutral-200 bg-white shadow-sm transition hover:shadow-md">
+            <div class="aspect-[16/12] w-full overflow-hidden rounded-t-xl bg-neutral-200 flex items-center justify-center text-neutral-600 font-semibold">Podcast Cover</div>
+            <div class="space-y-3 p-4">
+                <h3 class="text-base font-semibold tracking-tight sm:text-lg">Podcast Title</h3>
+                <div class="flex items-center gap-2 text-sm text-neutral-600">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/></svg>
+                <span>8 seasons</span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                <span class="rounded-md border border-neutral-200 bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-700">Sports</span>
+                <span class="rounded-md border border-neutral-200 bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-700">News</span>
+                </div>
+                <p class="pt-1 text-xs text-neutral-500">Updated 6 days ago</p>
+            </div>
+            </article>
+
+            <!-- 8 -->
+            <article class="rounded-xl border border-neutral-200 bg-white shadow-sm transition hover:shadow-md">
+            <div class="aspect-[16/12] w-full overflow-hidden rounded-t-xl bg-neutral-200 flex items-center justify-center text-neutral-600 font-semibold">Podcast Cover</div>
+            <div class="space-y-3 p-4">
+                <h3 class="text-base font-semibold tracking-tight sm:text-lg">Podcast Title</h3>
+                <div class="flex items-center gap-2 text-sm text-neutral-600">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/></svg>
+                <span>3 seasons</span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                <span class="rounded-md border border-neutral-200 bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-700">Science</span>
+                <span class="rounded-md border border-neutral-200 bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-700">Nature</span>
+                </div>
+                <p class="pt-1 text-xs text-neutral-500">Updated 1 week ago</p>
+            </div>
+            </article>
+        </section>
+    </main>
+                <!-- Modal (hidden by default) -->
+        <div id="modal-root"
+            class="fixed inset-0 z-50 hidden"
+            aria-hidden="true">
+            <!-- Backdrop -->
+            <div id="modal-backdrop" class="absolute inset-0 bg-black/40"></div>
+
+            <!-- Dialog -->
+            <div id="modal-dialog"
+                role="dialog" aria-modal="true" aria-labelledby="modal-title"
+                class="relative mx-auto mt-10 w-[92%] max-w-3xl rounded-2xl bg-white shadow-xl outline-none">
+            <!-- Header -->
+            <div class="flex items-start justify-between p-6">
+                <h2 id="modal-title" class="text-2xl font-semibold tracking-tight">Podcast Title</h2>
+                <button id="modal-close"
+                        class="rounded-full p-2 text-neutral-600 hover:bg-neutral-100 focus:outline-none"
+                        aria-label="Close">
+                <!-- X icon -->
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6 6 18M6 6l12 12" />
+                </svg>
+                </button>
+            </div>
+
+            <!-- Body -->
+            <div class="grid grid-cols-1 gap-6 px-6 pb-6 sm:grid-cols-3">
+                <div class="sm:col-span-1">
+                <div class="aspect-[4/3] w-full overflow-hidden rounded-xl bg-neutral-200">
+                    <img id="modal-image" alt="" class="h-full w-full object-cover" />
+                </div>
+                </div>
+
+                <div class="sm:col-span-2">
+                <h3 class="mb-2 text-sm font-semibold text-neutral-700">Description</h3>
+                <p id="modal-description" class="text-sm leading-6 text-neutral-700"></p>
+
+                <h3 class="mt-4 mb-2 text-sm font-semibold text-neutral-700">Genres</h3>
+                <div id="modal-genres" class="flex flex-wrap gap-2"></div>
+
+                <div class="mt-4 flex items-center gap-2 text-sm text-neutral-600">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/>
+                    </svg>
+                    <span id="modal-updated"></span>
+                </div>
+                </div>
+            </div>
+
+            <!-- Seasons -->
+            <div class="border-t border-neutral-200 px-6 py-4">
+                <h3 class="text-base font-semibold">Seasons</h3>
+                <div id="modal-seasons" class="mt-3 space-y-3"></div>
+            </div>
+            </div>
+        </div>
+    <script type="module" src="./main.js"></script>   
+  </body>
+</html>
